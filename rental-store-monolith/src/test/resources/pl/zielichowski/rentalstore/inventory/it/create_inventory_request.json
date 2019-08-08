@@ -1,0 +1,20 @@
+{
+  "movies": [
+    {
+      "title": "Spider Man",
+      "type": "REGULAR"
+    },
+    {
+      "title": "Spider Man 2",
+      "type": "REGULAR"
+    },
+    {
+      "title": "Matrix 11",
+      "type": "NEW"
+    },
+    {
+      "title": "Out of Africa",
+      "type": "OLD"
+    }
+  ]
+}

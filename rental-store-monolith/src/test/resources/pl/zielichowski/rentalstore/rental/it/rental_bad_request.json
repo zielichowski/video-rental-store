@@ -1,0 +1,11 @@
+{
+  "inventoryId": "testInventory",
+  "rentalItemsRequest": {
+    "listOfItems": [
+      {
+        "movieId": "1234",
+        "daysOfRental": 5
+      }
+    ]
+  }
+}

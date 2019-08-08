@@ -1,0 +1,28 @@
+{
+  "_embedded" : {
+    "inventories" : [ {
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost/inventories/1"
+        },
+        "inventoryView" : {
+          "href" : "http://localhost/inventories/1"
+        },
+        "movies" : {
+          "href" : "http://localhost/inventories/1/movies"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost/inventories?page=0&size=20"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 1,
+    "totalPages" : 1,
+    "number" : 0
+  }
+}

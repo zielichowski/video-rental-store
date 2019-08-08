@@ -1,0 +1,23 @@
+{
+  "inventoryId": "{inventoryId}",
+  "rentalItemsRequest": {
+    "listOfItems": [
+      {
+        "movieId": "{movieId}",
+        "daysOfRental": "{days}"
+      },
+      {
+        "movieId": "{movieId}",
+        "daysOfRental": "{days}"
+      },
+      {
+        "movieId": "{movieId}",
+        "daysOfRental": "{days}"
+      },
+      {
+        "movieId": "{movieId}",
+        "daysOfRental": "{days}"
+      }
+    ]
+  }
+}

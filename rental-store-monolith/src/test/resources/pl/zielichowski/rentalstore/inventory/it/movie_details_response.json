@@ -1,0 +1,15 @@
+{
+  "movieInfo": {
+    "title": "Title2",
+    "type": "OLD"
+  },
+  "movieStatus": "AVAILABLE",
+  "_links": {
+    "self": {
+      "href": "http://localhost/movies/2"
+    },
+    "movieView": {
+      "href": "http://localhost/movies/2"
+    }
+  }
+}

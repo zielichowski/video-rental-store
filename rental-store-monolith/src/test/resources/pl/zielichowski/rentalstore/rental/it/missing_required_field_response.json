@@ -1,0 +1,7 @@
+{
+  "statusCode": 400,
+  "clientMessage": "VALIDATION_ERROR",
+  "errors": [
+    "Invalid parameters specified. Fields: [ inventoryId : null ] "
+  ]
+}

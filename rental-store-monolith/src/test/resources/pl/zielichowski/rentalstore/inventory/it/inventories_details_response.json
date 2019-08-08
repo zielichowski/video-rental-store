@@ -1,0 +1,13 @@
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost/inventories/1"
+    },
+    "inventoryView": {
+      "href": "http://localhost/inventories/1"
+    },
+    "movies": {
+      "href": "http://localhost/inventories/1/movies"
+    }
+  }
+}

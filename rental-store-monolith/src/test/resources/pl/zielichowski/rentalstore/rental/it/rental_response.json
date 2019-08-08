@@ -1,0 +1,37 @@
+{
+  "_embedded": {
+    "/rentals": [
+      {
+        "totalPrice": "10.00 PLN",
+        "rentalStatus": "ACCEPTED",
+        "items": [
+          {
+            "itemId": "1",
+            "daysOfRental": 5,
+            "price": "10.00 PLN",
+            "rentalItemStatus": "RENTED"
+          }
+        ],
+        "_links": {
+          "self": {
+            "href": "http://localhost/rentals/1"
+          },
+          "rentalView": {
+            "href": "http://localhost/rentals/1"
+          }
+        }
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "http://localhost/rentals?page=0&size=20"
+    }
+  },
+  "page": {
+    "size": 20,
+    "totalElements": 1,
+    "totalPages": 1,
+    "number": 0
+  }
+}

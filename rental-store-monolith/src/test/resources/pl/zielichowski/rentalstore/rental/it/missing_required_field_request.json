@@ -1,0 +1,10 @@
+{
+  "rentalItemsRequest": {
+    "listOfItems": [
+      {
+        "movieId": "bcd83e0a-538e-4646-b66e-66808bdc4deb",
+        "daysOfRental": 5
+      }
+    ]
+  }
+}

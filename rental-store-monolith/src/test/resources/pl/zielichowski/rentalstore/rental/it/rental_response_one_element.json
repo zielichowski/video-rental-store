@@ -1,0 +1,20 @@
+{
+  "totalPrice": "10.00 PLN",
+  "rentalStatus": "ACCEPTED",
+  "items": [
+    {
+      "itemId": "1",
+      "daysOfRental": 5,
+      "price": "10.00 PLN",
+      "rentalItemStatus": "RENTED"
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "http://localhost/rentals/1"
+    },
+    "rentalView": {
+      "href": "http://localhost/rentals/1"
+    }
+  }
+}

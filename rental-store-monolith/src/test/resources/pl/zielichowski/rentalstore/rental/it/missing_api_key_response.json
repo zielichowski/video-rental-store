@@ -1,0 +1,7 @@
+{
+  "statusCode": 400,
+  "clientMessage": "BAD_REQUEST",
+  "errors": [
+    "Missing request header 'Api-key'"
+  ]
+}

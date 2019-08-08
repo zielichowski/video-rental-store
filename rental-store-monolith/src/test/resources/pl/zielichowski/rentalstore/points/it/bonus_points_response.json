@@ -1,0 +1,8 @@
+{
+  "bonusPoints": 3,
+  "_links": {
+    "self": {
+      "href": "http://localhost/points"
+    }
+  }
+}
