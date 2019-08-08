@@ -4,12 +4,7 @@ import org.axonframework.test.aggregate.AggregateTestFixture
 import pl.zielichowski.rentalstore.common.api.domain.MovieId
 import pl.zielichowski.rentalstore.common.api.domain.MovieInfo
 import pl.zielichowski.rentalstore.common.api.domain.MovieTypeName
-import pl.zielichowski.rentalstore.common.api.inventory.CreateInventoryCommand
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryCreatedEvent
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithErrorEvent
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithSuccessEvent
-import pl.zielichowski.rentalstore.common.api.inventory.MovieReturnedEvent
-import pl.zielichowski.rentalstore.common.api.inventory.ReturnMovieCommand
+import pl.zielichowski.rentalstore.common.api.inventory.*
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll

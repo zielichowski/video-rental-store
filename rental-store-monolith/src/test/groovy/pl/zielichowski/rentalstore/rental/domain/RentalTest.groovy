@@ -4,21 +4,7 @@ import org.axonframework.test.aggregate.AggregateTestFixture
 import pl.zielichowski.rentalstore.common.api.domain.Money
 import pl.zielichowski.rentalstore.common.api.domain.MovieId
 import pl.zielichowski.rentalstore.common.api.domain.MovieTypeName
-import pl.zielichowski.rentalstore.common.api.rental.AcceptRentalCommand
-import pl.zielichowski.rentalstore.common.api.rental.BonusPointsCalculatedEvent
-import pl.zielichowski.rentalstore.common.api.rental.CalculatePossibleSurchargesCommand
-import pl.zielichowski.rentalstore.common.api.rental.RejectRentalCommand
-import pl.zielichowski.rentalstore.common.api.rental.RentalAcceptedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalFinishedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalItem
-import pl.zielichowski.rentalstore.common.api.rental.RentalItemReturnedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalRejectedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalSubmittedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovie
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovies
-import pl.zielichowski.rentalstore.common.api.rental.ReturnRentalItemCommand
-import pl.zielichowski.rentalstore.common.api.rental.SubmitRentalCommand
-import pl.zielichowski.rentalstore.common.api.rental.SurchargeCalculatedEvent
+import pl.zielichowski.rentalstore.common.api.rental.*
 import spock.lang.Shared
 import spock.lang.Specification
 

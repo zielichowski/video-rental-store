@@ -7,13 +7,7 @@ import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateMember;
 import org.axonframework.spring.stereotype.Aggregate;
 import pl.zielichowski.rentalstore.common.api.domain.MovieId;
-import pl.zielichowski.rentalstore.common.api.inventory.CreateInventoryCommand;
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryCreatedEvent;
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithErrorEvent;
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithSuccessEvent;
-import pl.zielichowski.rentalstore.common.api.inventory.MovieNotFoundException;
-import pl.zielichowski.rentalstore.common.api.inventory.MovieReturnedEvent;
-import pl.zielichowski.rentalstore.common.api.inventory.ReturnMovieCommand;
+import pl.zielichowski.rentalstore.common.api.inventory.*;
 
 import java.util.HashMap;
 import java.util.Map;

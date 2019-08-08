@@ -8,17 +8,7 @@ import pl.zielichowski.rentalstore.common.api.inventory.CreateInventoryOrderComm
 import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithErrorEvent
 import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithSuccessEvent
 import pl.zielichowski.rentalstore.common.api.inventory.ReturnMovieCommand
-import pl.zielichowski.rentalstore.common.api.rental.AcceptRentalCommand
-import pl.zielichowski.rentalstore.common.api.rental.CalculatePossibleSurchargesCommand
-import pl.zielichowski.rentalstore.common.api.rental.RejectRentalCommand
-import pl.zielichowski.rentalstore.common.api.rental.RentalAcceptedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalFinishedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalItem
-import pl.zielichowski.rentalstore.common.api.rental.RentalItemReturnedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalSubmittedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovie
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovies
-import pl.zielichowski.rentalstore.common.api.rental.SurchargeCalculatedEvent
+import pl.zielichowski.rentalstore.common.api.rental.*
 import spock.lang.Shared
 import spock.lang.Specification
 

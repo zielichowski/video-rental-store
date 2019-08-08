@@ -3,11 +3,7 @@ package pl.zielichowski.rentalstore.inventory.query
 import pl.zielichowski.rentalstore.common.api.domain.MovieId
 import pl.zielichowski.rentalstore.common.api.domain.MovieInfo
 import pl.zielichowski.rentalstore.common.api.domain.MovieTypeName
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryCreatedEvent
-import pl.zielichowski.rentalstore.common.api.inventory.InventoryOrderValidatedWithSuccessEvent
-import pl.zielichowski.rentalstore.common.api.inventory.MovieData
-import pl.zielichowski.rentalstore.common.api.inventory.MovieReturnedEvent
-import pl.zielichowski.rentalstore.common.api.inventory.PublicMovieStatus
+import pl.zielichowski.rentalstore.common.api.inventory.*
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -15,7 +11,7 @@ import java.util.stream.Collectors
 
 class InventoryHandlerTest extends Specification {
 
-    private InventoryHandler testSubject;
+    private InventoryHandler testSubject
     def inventoryViewRepository = Mock(InventoryViewRepository)
     def movieViewRepository = Mock(MovieViewRepository)
 

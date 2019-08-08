@@ -4,14 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.stereotype.Component;
-import pl.zielichowski.rentalstore.common.api.rental.PublicRentalStatus;
-import pl.zielichowski.rentalstore.common.api.rental.RentalAcceptedEvent;
-import pl.zielichowski.rentalstore.common.api.rental.RentalFinishedEvent;
-import pl.zielichowski.rentalstore.common.api.rental.RentalItemReturnedEvent;
-import pl.zielichowski.rentalstore.common.api.rental.RentalItemStatus;
-import pl.zielichowski.rentalstore.common.api.rental.RentalRejectedEvent;
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovie;
-import pl.zielichowski.rentalstore.common.api.rental.SurchargeCalculatedEvent;
+import pl.zielichowski.rentalstore.common.api.rental.*;
 
 import java.util.List;
 import java.util.stream.Collectors;

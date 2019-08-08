@@ -2,15 +2,7 @@ package pl.zielichowski.rentalstore.rental.query
 
 import pl.zielichowski.rentalstore.common.api.domain.Money
 import pl.zielichowski.rentalstore.common.api.domain.MovieId
-import pl.zielichowski.rentalstore.common.api.rental.PublicRentalStatus
-import pl.zielichowski.rentalstore.common.api.rental.RentalAcceptedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalFinishedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalItemReturnedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentalItemStatus
-import pl.zielichowski.rentalstore.common.api.rental.RentalRejectedEvent
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovie
-import pl.zielichowski.rentalstore.common.api.rental.RentedMovies
-import pl.zielichowski.rentalstore.common.api.rental.SurchargeCalculatedEvent
+import pl.zielichowski.rentalstore.common.api.rental.*
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -18,7 +10,7 @@ import java.time.LocalDate
 
 class RentalHandlerTest extends Specification {
 
-    private RentalHandler testSubject;
+    private RentalHandler testSubject
 
     def rentalViewRepository = Mock(RentalViewRepository)
     def rentalItemViewRepository = Mock(RentalItemViewRepository)
@@ -144,7 +136,7 @@ class RentalHandlerTest extends Specification {
                 .itemId("1")
                 .price(price.toString())
                 .rentalItemStatus(RentalItemStatus.RENTED)
-                .build();
+                .build()
     }
 
     def setup() {

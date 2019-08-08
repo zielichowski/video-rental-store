@@ -6,11 +6,7 @@ import lombok.NoArgsConstructor;
 import pl.zielichowski.rentalstore.common.api.domain.MovieInfo;
 import pl.zielichowski.rentalstore.common.api.inventory.PublicMovieStatus;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
