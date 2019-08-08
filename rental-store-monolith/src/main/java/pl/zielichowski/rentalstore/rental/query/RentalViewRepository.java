@@ -15,7 +15,7 @@ public interface RentalViewRepository extends PagingAndSortingRepository<RentalV
     Page<RentalView> findAllByUserId(String userId, Pageable pageable);
 
     @RestResource(exported = false)
-    RentalView findByUserIdAndRentalId(String userId, String rentalId);
+    Optional<RentalView> findByUserIdAndRentalId(String userId, String rentalId);
 
     @Override
     @RestResource(exported = false)

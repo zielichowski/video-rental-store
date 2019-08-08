@@ -31,6 +31,7 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
@@ -38,6 +39,7 @@ import static java.util.stream.Collectors.toList;
 
 @RepositoryRestController
 @RequiredArgsConstructor
+@RestController
 class RentalController {
     private final PagedResourcesAssembler<RentalView> pagedAssembler;
     private final RentalViewRepository rentalViewRepository;
@@ -61,9 +63,10 @@ class RentalController {
             PersistentEntityResourceAssembler entityAssembler,
             @RequestHeader("Api-key") String apiKey,
             @PathVariable("rentalId") String rentalId) {
-        RentalView rentalView = rentalViewRepository.findByUserIdAndRentalId(apiKey, rentalId);
-        PersistentEntityResource resource = entityAssembler.toFullResource(rentalView);
-        return new ResponseEntity<>(resource, HttpStatus.OK);
+        Optional<RentalView> rentalView = rentalViewRepository.findByUserIdAndRentalId(apiKey, rentalId);
+        return rentalView
+                .map(rentalView1 -> new ResponseEntity<>(entityAssembler.toFullResource(rentalView1), HttpStatus.OK))
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping(value = "/rentals")

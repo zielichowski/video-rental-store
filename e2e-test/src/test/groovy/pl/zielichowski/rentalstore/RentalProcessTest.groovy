@@ -1,19 +1,13 @@
 package pl.zielichowski.rentalstore
 
-
 import groovy.json.JsonSlurper
 import groovyx.net.http.ContentType
 import groovyx.net.http.RESTClient
 import spock.lang.Shared
 import spock.lang.Specification
+import spock.util.concurrent.PollingConditions
 
-import java.util.concurrent.Callable
-import java.util.concurrent.TimeUnit
-
-import static org.awaitility.Awaitility.await
-import static org.hamcrest.number.OrderingComparison.greaterThan
-
-class RentalTest extends Specification {
+class RentalProcessTest extends Specification {
     @Shared
     def port = 8080
     @Shared
@@ -30,13 +24,15 @@ class RentalTest extends Specification {
     @Shared
     def rentedMovies = []
 
+    @Shared
+    def receiveCondition = new PollingConditions(delay: 0.2, initialDelay: 0.2, timeout: 3)
+
+
     def setup() {
         rentalSettings.put("Out of Africa", 7)
         rentalSettings.put("Matrix 11", 1)
         rentalSettings.put("Spider Man 2", 2)
         rentalSettings.put("Spider Man", 5)
-
-
     }
 
     def "should walk through rental process"() {
@@ -49,7 +45,10 @@ class RentalTest extends Specification {
         def inventoryResourceAddress = inventoriesResponse.headers.location
 
         then: "wait until view model is updated"
-        await().atMost(1, TimeUnit.SECONDS).until(moviesAdded(inventoryResourceAddress), greaterThan(0))
+        receiveCondition.eventually {
+            def response = restClient.get(uri: inventoryResourceAddress + "/movies", contentType: ContentType.JSON)
+            assert response.data["_embedded"]["movies"].size() > 0
+        }
 
         when: "read movie data"
         def inventoryResponse = restClient.get(uri: inventoryResourceAddress + "/movies", contentType: ContentType.JSON)
@@ -65,7 +64,10 @@ class RentalTest extends Specification {
         def rentalResourceAddress = rentalResponse.headers.location
 
         and: "wait until rental view model is updated"
-        await().atMost(1, TimeUnit.SECONDS).until(rentalsAdded(rentalResourceAddress), greaterThan(0))
+        receiveCondition.eventually {
+            def response = restClient.get(uri: rentalResourceAddress, contentType: ContentType.JSON, headers: ["Api-key": apiKey])
+            assert response.status == 200
+        }
 
         when: "get rental data"
         def rentalDataResponse = restClient.get(uri: rentalResourceAddress, contentType: ContentType.JSON, headers: ["Api-key": apiKey])
@@ -84,7 +86,10 @@ class RentalTest extends Specification {
 
         then: "rental status is FINISHED and surcharge is 0 SEK"
         returnResponse.status == 202
-        await().atMost(1, TimeUnit.SECONDS).until(rentalIsFinished(rentalResourceAddress))
+        receiveCondition.eventually {
+            def rentalData = restClient.get(uri: rentalResourceAddress, contentType: ContentType.JSON, headers: ["Api-key": apiKey])
+            assert rentalData.data.rentalStatus == "FINISHED" && rentalData.data.totalSurcharge == "0.00 SEK"
+        }
     }
 
     Object createReturnRequest() {
@@ -109,28 +114,5 @@ class RentalTest extends Specification {
         }
         return parsedRentalRequest
 
-    }
-
-    Callable<Object> moviesAdded(resourceAddress) {
-        Callable<Object> response = {
-            def response = restClient.get(uri: resourceAddress + "/movies", contentType: ContentType.JSON)
-            return response.data["_embedded"]["movies"].size()
-        }
-        return response
-    }
-
-    Callable<Object> rentalsAdded(resourceAddress) {
-        Callable<Object> response = {
-            def response = restClient.get(uri: resourceAddress, contentType: ContentType.JSON, headers: ["Api-key": apiKey])
-            return response.data["items"].size()
-        }
-        return response
-    }
-
-    Callable<Boolean> rentalIsFinished(rentalResourceAddress) {
-        Callable<Boolean> response = {
-            def rentalData = restClient.get(uri: rentalResourceAddress, contentType: ContentType.JSON, headers: ["Api-key": apiKey])
-            return rentalData.data.rentalStatus == "FINISHED" && rentalData.data.totalSurcharge == "0.00 SEK"
-        }
     }
 }
