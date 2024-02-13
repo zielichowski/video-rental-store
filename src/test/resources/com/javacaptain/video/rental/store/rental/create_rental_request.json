@@ -1,0 +1,13 @@
+{
+  "rentalItems": [
+    {
+      "movieId": "1",
+      "daysOfRental": 5
+    },
+    {
+      "movieId": "2",
+      "daysOfRental": 6
+    }
+  ],
+  "clientId": "1"
+}

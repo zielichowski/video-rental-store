@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'groovy'
+}
+
+group = "com.javacaptain"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation("org.apache.groovy:groovy-all:4.0.17")
+    testImplementation("org.spockframework:spock-core:2.4-M1-groovy-4.0")
+
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.flywaydb:flyway-core")
+    runtimeOnly("org.postgresql:postgresql")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation "org.testcontainers:spock:1.19.3"
+    testImplementation("org.testcontainers:postgresql:1.19.3")
+    testImplementation("org.spockframework:spock-spring:2.4-M1-groovy-4.0")
+
+}
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+tasks.named('test') {
+    jvmArgs(['--enable-preview'])
+    useJUnitPlatform()
+}
