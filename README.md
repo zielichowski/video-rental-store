@@ -40,7 +40,6 @@ Concerns of the bounded context should be contained within the single module.
 - Skipped API authentication/authorization.
 - Skipped entire client management domain
 - Only the current number of customer points is presented.
-- Skipped infrastructure part. The application uses h2 in memory db and that's the only external dependency.
 - Simple Money representation. I am aware that money is a delicate matter, and extra care is needed when dealing with it
   in production software.
 
