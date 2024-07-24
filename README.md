@@ -9,7 +9,7 @@
 As mentioned, this repository is meant to show off a key techniques. It has only a demonstration and educational
 purpose.
 The code is far from being called production, many oversimplifications have been used.
-The theoretically background can be found on the [blogpost](https://javacaptain.dev/2024/01/11/hexagonal-architecture-made-simple-practice/)
+The theoretically background can be found on the [blogpost](https://javacaptain.com/2024/01/11/hexagonal-architecture-made-simple-practice/)
 
 ### Basic Concepts
 
